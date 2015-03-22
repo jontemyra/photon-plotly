@@ -1,7 +1,7 @@
 #pragma GCC diagnostic ignored "-Wwrite-strings"
 
 #ifndef spark_plotly_h
-#include "../libraries/spark-plotly/spark-plotly.h"
+#include "spark-plotly.h"
 #endif
 
 
