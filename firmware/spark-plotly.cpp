@@ -1,3 +1,5 @@
+#pragma GCC diagnostic ignored "-Wwrite-strings"
+
 #ifndef spark_plotly_h
 #include "spark-plotly.h"
 #endif
@@ -41,7 +43,7 @@ bool plotly::init(){
     if(log_level < 3){} Serial.println(F("... Connected to plotly's REST servers"));
     if(log_level < 3){} Serial.println(F("... Sending HTTP Post to plotly"));
     print_(F("POST /clientresp HTTP/1.1\r\n"));
-    print_(F("Host: 107.21.214.199\r\n"));
+    print_(F("Host: plot.ly\r\n"));
     print_(F("User-Agent: SparkCore/0.0.1\r\n"));
 
     print_(F("Content-Length: "));
@@ -110,15 +112,12 @@ bool plotly::init(){
     // if we find it
     //
     char allStreamsGo[] = "All Streams Go!";
-    char error[] = "\"error\": \"";
     int asgCnt = 0; // asg stands for All Streams Go
-    char url[] = "\"url\": \"http://107.21.214.199/~";
+    char url[] = "\"url\": \"http://plot.ly/~";
     char fid[4];
     int fidCnt = 0;
     int urlCnt = 0;
     int usernameCnt = 0;
-    int urlLower = 0;
-    int urlUpper = 0;
     bool proceed = false;
     bool fidMatched = false;
 
@@ -127,8 +126,8 @@ bool plotly::init(){
     }
 
     if(!dry_run){
-        while(client.connected()){
-            if(client.available()){
+        while (client.connected() && (!proceed || client.available())) {
+            if (client.available()) {
                 char c = client.read();
                 if(log_level < 2) Serial.print(c);
 
