@@ -1,5 +1,5 @@
-#ifndef spark_plotly_h
-#define spark_plotly_h
+#ifndef photon_plotly_h
+#define photon_plotly_h
 
 #include "application.h"
 
