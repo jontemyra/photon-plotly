@@ -1,7 +1,7 @@
 {
-  "name": "spark-plotly",
-  "author": "Martin Cooley",
+  "name": "photon-plotly",
+  "author": "Jonas Arvidsson",
   "license": "MIT",
-  "version": "0.0.10",
-  "description": "Based off Plot.ly examples for Arduino."
+  "version": "0.0.1",
+  "description": "Based off spark-plotly lib."
 }
