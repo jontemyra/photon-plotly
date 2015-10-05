@@ -14,11 +14,11 @@ plotly::plotly(char *username, char *api_key, char* stream_tokens[], char *filen
     stream_tokens_ = stream_tokens;
     filename_ = filename;
     nTraces_ = nTraces;
-    maxpoints = 30;
+    maxpoints = 15000;
     fibonacci_ = 1;
     world_readable = true;
     convertTimestamp = true;
-    timezone = "America/Montreal";
+    timezone = "Sweden/Stockholm";
     fileopt = "overwrite";
 }
 
